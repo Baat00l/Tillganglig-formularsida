@@ -1,0 +1,82 @@
+/* Grundläggande styling med tillräcklig kontrast och responsivitet */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a; /* Kontrast 13.6:1 mot vit bakgrund */
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 2rem; /* Extra luft på höger sida */
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #005a9c;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  align-self: center; /* Centreras inom flexbox */
+}
+
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid #ffbf47; /* Synlig fokusindikator */
+  outline-offset: 2px;
+}
+.confirmation-message {
+  display: none;
+  color: green;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+
+/* Responsivitet vid förstoring */
+@media (min-width: 600px) {
+  form {
+    gap: 2rem;
+  }
+}
