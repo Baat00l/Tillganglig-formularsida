@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontaktformulär</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Stoppar riktig skickning
+
+      const confirmation = document.getElementById("confirmation");
+      confirmation.textContent = "Tack! Ditt meddelande har skickats.";
+      confirmation.style.display = "block";
+
+      // Scrollar hela vägen upp med mjuk animation
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</head>
+<body>
+  <main>
+    <!-- Bekräftelsemeddelande visas överst -->
+<div id="confirmation" role="alert" class="confirmation-message"></div>
+
+    <h1>Kontakta oss</h1>
+
+    <form onsubmit="handleSubmit(event)">
+      <fieldset>
+        <legend>Dina uppgifter</legend>
+
+        <label for="name">Namn:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">E-post:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Telefonnummer:</label>
+        <input type="tel" id="phone" name="phone" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Meddelande</legend>
+
+        <label for="subject">Ämne:</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Meddelande:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </fieldset>
+
+      <button type="submit" aria-label="Skicka kontaktformulär">Skicka</button>
+    </form>
+  </main>
+</body>
+</html>
